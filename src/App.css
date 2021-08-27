@@ -318,3 +318,6 @@
   filter: grayscale(1) !important;
   cursor: default !important;
 }
+a {
+  text-decoration: none;
+}

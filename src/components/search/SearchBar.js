@@ -8,11 +8,15 @@ const SearchBar = (props) => {
   const searchMovieRef = useRef()
   const searchYearRef = useRef()
   
+  // first movie ever made was released in 1888, no point of searching info prior to that
+  const firstMovie = 1888
+  const currentYear = new Date().getFullYear()
+  
   const handleMovieSearchInputChange = () => {
-    props.onMovieInputChange(searchMovieRef.current.value)
+    props.onMovieInputChange(searchMovieRef.current.value.trim())
   }
   const handleYearSearchInputChange = () => {
-    props.onYearInputChange(searchYearRef.current.value)
+    props.onYearInputChange(searchYearRef.current.value.trim())
   }
   
   return (
@@ -39,9 +43,11 @@ const SearchBar = (props) => {
               className='shrink-3'
               input={{
                 id: 'yearInput',
-                type: 'text',
+                type: 'number',
                 placeholder: 'Year (optional)',
                 value: value.yearSearchString,
+                min: firstMovie,
+                max: currentYear,
                 onChange: handleYearSearchInputChange
               }}
               onClear={props.onClearYear}
