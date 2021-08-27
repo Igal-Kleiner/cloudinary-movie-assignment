@@ -127,7 +127,9 @@ function App() {
   }
   
   const loadMoreHandler = () => {
-    setPage(page + 1)
+    if (page < totalPages) {
+      setPage(page + 1)
+    }
   }
   
   return (
