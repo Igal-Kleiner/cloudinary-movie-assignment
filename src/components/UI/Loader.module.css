@@ -1,0 +1,11 @@
+.loaderContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0,0,0,.5);
+}
+.loaderContainer .loader {
+  width: 200px;
+  height: 200px;
+}

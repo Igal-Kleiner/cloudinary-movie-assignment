@@ -1,0 +1,10 @@
+.movieCard {
+  width: 300px;
+}
+.movieCard .moviePoster {
+  width: 250px;
+  height: 300px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
